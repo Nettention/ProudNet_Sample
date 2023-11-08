@@ -1,6 +1,23 @@
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudio,visualstudiocode,c++,csharp,unity,unrealengine
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudio,visualstudiocode,c++,csharp,unity,unrealengine
 
+### CMake ###
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+### CMake Patch ###
+# External projects
+*-prefix/
+
 ### C++ ###
 # Prerequisites
 *.d
