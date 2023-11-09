@@ -7,7 +7,7 @@ set(CMAKE_SUPPRESS_REGENERATION true)
 project (SimpleAdo)
 
 #include path
-include_directories("../../include")
+include_directories("../ProudNet/ProudNet/include")
 
 #Setting the name of groups of files
 file(GLOB SRC_CLIENT
@@ -17,7 +17,7 @@ file(GLOB SRC_CLIENT
 
 #Setting the target
 add_executable(SimpleAdo ${SRC_CLIENT})
-set_property(TARGET SimpleAdo PROPERTY RUNTIME_OUTPUT_DIRECTORY ../bin)
+set_property(TARGET SimpleAdo PROPERTY RUNTIME_OUTPUT_DIRECTORY ./bin)
 set_property(TARGET SimpleAdo PROPERTY RUNTIME_OUTPUT_NAME SimpleAdo_${CMAKE_CFG_INTDIR})
 
 #Setting about MSVC
@@ -28,6 +28,6 @@ if(MSVC)
 		set(VS_VERSION_FOLDER_NAME ${CMAKE_VS_PLATFORM_TOOLSET})
 	endif()
 	
-	target_link_libraries(SimpleAdo ../../lib/${CMAKE_VS_PLATFORM_NAME}/${VS_VERSION_FOLDER_NAME}/${CMAKE_CFG_INTDIR}/ProudNetServer)
-	target_link_libraries(SimpleAdo ../../lib/${CMAKE_VS_PLATFORM_NAME}/${VS_VERSION_FOLDER_NAME}/${CMAKE_CFG_INTDIR}/ProudNetClient)
+	target_link_libraries(SimpleAdo ../ProudNet/ProudNet/lib/${CMAKE_VS_PLATFORM_NAME}/${VS_VERSION_FOLDER_NAME}/${CMAKE_CFG_INTDIR}/ProudNetServer)
+	target_link_libraries(SimpleAdo ../ProudNet/ProudNet/lib/${CMAKE_VS_PLATFORM_NAME}/${VS_VERSION_FOLDER_NAME}/${CMAKE_CFG_INTDIR}/ProudNetClient)
 endif(MSVC)
