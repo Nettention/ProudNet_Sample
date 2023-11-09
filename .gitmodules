@@ -1,0 +1,3 @@
+[submodule "ProudNet"]
+	path = ProudNet
+	url = https://github.com/Nettention/ProudNet.git
