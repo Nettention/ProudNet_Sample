@@ -2,9 +2,9 @@
 //
 
 #include "stdafx.h"
-#include "../../include/AdoWrap.h"
-#include "../../include/ProudNetServer.h"
-#include "../../include/CoInit.h"
+#include "../ProudNet/ProudNet/include/AdoWrap.h"
+#include "../ProudNet/ProudNet/include/ProudNetServer.h"
+#include "../ProudNet/ProudNet/include/CoInit.h"
 
 #define MYSQL
 
