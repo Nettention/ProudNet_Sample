@@ -202,22 +202,22 @@ void MsSqlTest()
 		int id;
 		String name;
 
-		cmd.Prepare(conn, _PNT("{call insertTest(?,?)}"));
+		cmd.Prepare(conn, _PNT("{exec insertTest ?,?}"));
 		cmd.AppendInputParameter(&id);
 		cmd.AppendInputParameter(&name);
 
 		id = 8;
 		name = _PNT("SPTest");
 		result = cmd.Execute();
-		_tprintf_s(_PNT("{call insertTest(8, 'SPTest')} = %d [1]\n"), result);
+		_tprintf_s(_PNT("{exec insertTest 8, 'SPTest'} = %d [1]\n"), result);
 
 		id = 9;
 		cmd.SetNullParameter(2, true);
 		result = cmd.Execute();
 		cmd.SetNullParameter(2, false);
-		_tprintf_s(_PNT("{call insertTest(9, NULL)} = %d [1]\n"), result);
+		_tprintf_s(_PNT("{exec insertTest 9, NULL } = %d [1]\n"), result);
 
-		cmd.Prepare(conn, _PNT("{? = call outputTest(?,?)}"));
+		cmd.Prepare(conn, _PNT("{? = exec outputTest ?,? }"));
 		cmd.AppendOutputParameter(&ret);
 		cmd.AppendInputParameter(&id);
 		cmd.AppendOutputParameter(&name);
@@ -226,7 +226,7 @@ void MsSqlTest()
 		name.GetBuffer(100);
 		result = cmd.Execute();
 		name.ReleaseBuffer();
-		_tprintf_s(_PNT("{? = call outputTest(5, &name)} = %d [1], %d = [100], %ws = [Nettention]\n"), result, ret, name.GetString());
+		_tprintf_s(_PNT("{? = call outputTest 5, &name } = %d [1], %d = [100], %ws = [Nettention]\n"), result, ret, name.GetString());
 
 		_tprintf_s(_PNT("-- Stored Procedure Prepare Execute Test End\n"));
 	}
