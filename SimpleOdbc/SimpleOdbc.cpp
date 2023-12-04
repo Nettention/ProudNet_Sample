@@ -220,7 +220,7 @@ void MsSqlTest()
 		cmd.Prepare(conn, _PNT("{? = exec outputTest ?,? }"));
 		cmd.AppendOutputParameter(&ret);
 		cmd.AppendInputParameter(&id);
-		cmd.AppendInputParameter(&name);
+		cmd.AppendOutputParameter(&name);
 
 		id = 5;
 		name.GetBuffer(100);
