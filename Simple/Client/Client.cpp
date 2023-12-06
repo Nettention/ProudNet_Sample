@@ -53,7 +53,7 @@ public:
 
 // RMI stub instance.
 // 
-// RMI sub 인스턴스
+// RMI stub 인스턴스
 SimpleStub g_SimpleStub;
 
 // RMI function implementation that you define.
