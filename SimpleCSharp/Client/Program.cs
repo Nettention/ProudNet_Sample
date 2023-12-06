@@ -27,10 +27,8 @@ namespace SimpleCSharp
         static Simple.Proxy g_Proxy = new Simple.Proxy();
 
         // RMI stub for receiving messages.
-        // Unlike RMI proxy, it is derived and RMI function is
-        // implemented by function override.
         //
-        // RMI proxy와는 다르게 함수 오버라이딩 후 사용한다.
+        // RMI stub은 메시지를 받는 데 사용된다.
         static Simple.Stub g_Stub = new Simple.Stub();
 
         // 각 stub 함수 송신 시 실행할 기능을 정의한 함수.
